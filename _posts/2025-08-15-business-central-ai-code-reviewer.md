@@ -3,12 +3,17 @@ layout: post
 title: "An AL-aware code review bot for Business Central (GitHub Action)"
 description: "A small open-source reviewer that understands Business Central: app structure detection, permissions/entitlements, and AL Guideline hints - built for PRs on GitHub."
 date: 2025-08-15
+last_modified_at: 2025-08-19
 categories: [DevOps, Engineering, AI]
 tags: [GitHub Actions, Code Review]
 author: [skeck]
 canonical_url: https://github.com/marketplace/actions/business-central-ai-code-reviewer
 excerpt_separator: <!--more-->
+image:
+  path: /assets/img/prreview-commit.png
+  alt: "A review bot posting a summary and inline comments."
 ---
+
 
 I built a small GitHub Action for my employer **[@AidentErfurt](https://github.com/AidentErfurt)** that reviews AL pull requests using OpenAI, Azure OpenAI or OpenRouter.ai and some Business Central context out of the box.
 
@@ -23,6 +28,20 @@ It’s open source (Apache-2.0), and it’s not our core product, just something
 * Marketplace:<https://github.com/marketplace/actions/business-central-ai-code-reviewer> 
 * Repo: <https://github.com/AidentErfurt/bc-ai-reviewer>
 
+## Update - 2025-08-19
+
+- **GPT-5-ready.** When you use `AI_MODEL: gpt-5` (OpenAI **or** an Azure deployment with that name), the action switches to a GPT-5-optimized prompt and accepts `REASONING_EFFORT: low|medium|high`. It will try the **Responses API** when available and fall back to Chat Completions automatically.
+- **Cheat-sheet aligned.** The reviewer prompt/behavior now follows OpenAI’s *GPT-5 for coding* cheat sheet to keep outputs structured (strict JSON), precise, and focused: <https://cdn.openai.com/API/docs/gpt-5-for-coding-cheatsheet.pdf>.
+
+Minimal config example:
+
+```yml
+AI_PROVIDER: azure
+AI_MODEL:    gpt-5          # deployment name on Azure; model name on OpenAI
+PROMPT_STYLE: auto          # auto-switches to GPT-5 prompt
+REASONING_EFFORT: medium
+````
+
 <!--more-->
 
 ## Why another reviewer?
@@ -32,9 +51,9 @@ Generic code reviewers don’t know AL (yet), Business Central terminology, or t
 ## What it does in a pull request
 
 1. Reads the PR’s unified diff and (optionally) linked issues.
-2. Automatically discovers **app roots** and adds `app.json`, nearby docs, and (optionally) permissions/entitlements to the context.  
-3. Pulls **AL Guideline** docs for patterns it detects in the diff.  
-4. Asks the model for a short summary + a limited number of inline comments.  
+2. Automatically discovers **app roots** and adds `app.json`, nearby docs, and (optionally) permissions/entitlements to the context.
+3. Pulls **AL Guideline** docs for patterns it detects in the diff.
+4. Asks the model for a short summary + a limited number of inline comments.
 5. Posts a PR review; subsequent runs focus on **new commits** only.
 
 ## Quick start (Azure OpenAI, o3-mini)
@@ -94,11 +113,11 @@ jobs:
 
 ## Configuration you’ll probably care about
 
-* `AI_PROVIDER` — `azure` (default), `openai`, or `openrouter`
-* `AI_MODEL` — defaults to `o3-mini`
-* `INCLUDE_PATTERNS` / `EXCLUDE_PATTERNS` — scope the diff so you don’t review pipelines/docs, unless you want to
-* `AUTO_DETECT_APPS`, `INCLUDE_APP_PERMISSIONS`, `INCLUDE_APP_MARKDOWN` — context controls
-* `MAX_COMMENTS` — 0 for “as many as needed”, or set a cap (we default to 10)
+* `AI_PROVIDER` - `azure` (default), `openai`, or `openrouter`
+* `AI_MODEL` - defaults to `o3-mini`
+* `INCLUDE_PATTERNS` / `EXCLUDE_PATTERNS` - scope the diff so you don’t review pipelines/docs, unless you want to
+* `AUTO_DETECT_APPS`, `INCLUDE_APP_PERMISSIONS`, `INCLUDE_APP_MARKDOWN` - context controls
+* `MAX_COMMENTS` - 0 for “as many as needed”, or set a cap (we default to 10)
 
 Full list is in the README.
 
