@@ -40,7 +40,7 @@ If you work with preview sandboxes or preview containers, you usually need the p
 
 At the moment, there is still an open authentication bug with the prerelease AL version. Connecting to sandboxes outside your own tenant (?) can fail.
 
-I found that authentication was unreliable—sometimes it worked, sometimes it didn't. Here's what helped:
+I found that authentication was unreliable. Sometimes it worked, sometimes it didn't. Here's what helped:
 
 1. Run **AL: Clear Credentials** (from the command palette)
 2. Reload the VS Code window
