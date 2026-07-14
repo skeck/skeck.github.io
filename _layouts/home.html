@@ -46,40 +46,6 @@ layout: default
   {% endfor %}
 {% endif %}
 
-<section aria-labelledby="home-intro-title" class="mb-5">
-  <h1 id="home-intro-title" class="mb-2">Stefan Keck</h1>
-  <p class="mb-1 text-muted">Business Central developer working across AL, Azure and DevOps.</p>
-  <p class="mb-0 text-muted">
-    Practical notes about tools, workflows and technical details from real projects.
-  </p>
-</section>
-
-<section aria-labelledby="selected-notes-title" class="mb-4">
-  <h2 id="selected-notes-title" class="h4 mb-3">Selected Notes</h2>
-  <ul class="list-unstyled mb-0">
-    <li class="mb-3">
-      <a href="{% post_url 2026-06-04-github-codespaces-al %}">Business Central AL Development in GitHub Codespaces</a>
-      <p class="mb-0 mt-1 text-muted">A practical look at using GitHub Codespaces for AL development.</p>
-    </li>
-    <li class="mb-3">
-      <a href="{% post_url 2025-08-15-business-central-ai-code-reviewer %}">
-        An AL-aware code review bot for Business Central (GitHub Action)
-      </a>
-      <p class="mb-0 mt-1 text-muted">
-        An open-source GitHub Action for more relevant and less noisy AL code reviews.
-      </p>
-    </li>
-    <li>
-      <a href="{% post_url 2026-06-04-al-go-flat-compiling %}">
-        AL-Go flat compiling: the fast lane that almost got faster
-      </a>
-      <p class="mb-0 mt-1 text-muted">
-        Why AL-Go flat compiling is fast, but still unnecessarily depends on Docker.
-      </p>
-    </li>
-  </ul>
-</section>
-
 <div id="post-list" class="flex-grow-1 px-xl-1">
   {% for post in posts %}
     <article class="card-wrapper card">
