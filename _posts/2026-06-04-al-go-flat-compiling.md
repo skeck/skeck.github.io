@@ -1,8 +1,8 @@
 ---
 title: "AL-Go flat compiling: the fast lane that almost got faster"
 date: 2026-06-04 00:00:00 +0200
-categories: [Business Central, AL-Go]
-tags: [al-go, github-actions, docker, ci-cd]
+categories: [Business Central, DevOps]
+tags: [AL-Go, GitHub Actions, Docker, CI/CD]
 ---
 
 Sometimes I do not need a full Business Central container in CI/CD. I just want a fast answer to one question: does it compile and if yes, please deploy it.
