@@ -1,12 +1,10 @@
 ---
-layout: post
 title: "An AL-aware code review bot for Business Central (GitHub Action)"
 description: "A small open-source reviewer that understands Business Central: app structure detection, permissions/entitlements, and AL Guideline hints - built for PRs on GitHub."
 date: 2025-08-15
 last_modified_at: 2025-08-19
 categories: [DevOps, Engineering, AI]
 tags: [GitHub Actions, Code Review]
-author: [skeck]
 canonical_url: https://github.com/marketplace/actions/business-central-ai-code-reviewer
 excerpt_separator: <!--more-->
 image:

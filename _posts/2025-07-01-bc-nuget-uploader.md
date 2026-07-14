@@ -1,11 +1,9 @@
 ---
-layout: post
 title: "A small helper for getting BC .app files into NuGet"
 description: "A small GitHub Action that turns committed Business Central .app files into NuGet packages, making it easy to share partner apps or integrate them into your DevOps workflow."
 date: 2025-07-01
 categories: [DevOps]
 tags: [GitHub Actions, NuGet]
-author: [skeck]
 excerpt_separator: <!--more-->
 ---
 
@@ -121,4 +119,3 @@ Partner sends .app ──▶ commit to /upload ──▶ bc-nuget-uploader
 2. Add the workflow above.
 3. Commit an `.app` to `/upload`.
 4. Check that the package shows up in your feed and reference it like any other NuGet package.
-

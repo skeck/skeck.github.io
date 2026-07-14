@@ -1,6 +1,5 @@
 ---
 
-layout: post
 title: "Build an AL Coding Agent for Business Central with Continue.dev"
 date: 2025-09-01
 tags: [Business Central, AL, Continue.dev, Azure, GitHub]

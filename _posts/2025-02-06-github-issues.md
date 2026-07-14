@@ -1,12 +1,10 @@
 ---
 
-layout: post
 title: "Planning the Work: Jira, Azure DevOps, or GitHub Issues"
 description: "Planning with Jira/Azure Boards/GitHub Issues, and practical migration tips."
 date: 2025-02-06
 categories: [DevOps, Planning]
 tags: [GitHub Issues, Jira, Azure DevOps, AL-Go]
-author: [skeck]
 excerpt_separator: "<!--more-->"
 ---
 

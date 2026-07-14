@@ -1,8 +1,7 @@
 ---
-layout: post
 title: "Business Central AL Development in GitHub Codespaces"
 date: 2026-06-04
-tags: [Business Central, AL, GitHub-Codespaces, VSCode]
+tags: [Business Central, AL, Codespaces, VS Code]
 description: GitHub Codespaces for AL development in Business Central is now production-ready. A practical overview of setup, benefits, and current caveats.
 excerpt_separator: "<!--more-->"
 ---
