@@ -58,7 +58,7 @@ But this does not mean that data residency, encryption, access controls, key man
 
 A European storage location is likewise not complete protection against government access. European states also have disclosure and surveillance powers. The meaningful question is therefore not whether every conceivable access can be ruled out in theory. What matters is which legal bases apply, which technical access paths exist, how transparent the procedures are, and which layers of protection the organization controls itself. The specific data-protection assessment therefore depends on the use case, the data being processed, and the agreed technical and organizational safeguards.
 
-Microsoft is also trying to address the remaining uncertainty through its [European Digital Commitments](https://blogs.microsoft.com/on-the-issues/2025/04/30/european-digital-commitments/) and [Microsoft Sovereign Cloud](https://blogs.microsoft.com/on-the-issues/2025/06/16/microsoft-sovereign-cloud) offerings. These include European operating and governance options as well as commitments to operational continuity. These measures do not change the ownership structure and do not replace an organization's own risk assessment. But they do show that the discussion should not stop at “US provider equals unprotected.”
+Microsoft is also trying to address the remaining uncertainty through its [European Digital Commitments](https://blogs.microsoft.com/on-the-issues/2025/04/30/european-digital-commitments/) and [Microsoft Sovereign Cloud](https://blogs.microsoft.com/on-the-issues/2025/06/16/microsoft-sovereign-cloud/) offerings. These include European operating and governance options as well as commitments to operational continuity. These measures do not change the ownership structure and do not replace an organization's own risk assessment. But they do show that the discussion should not stop at “US provider equals unprotected.”
 
 ### AI Features and AI Agents Are Treated Separately
 
@@ -72,15 +72,29 @@ Business Central supplements these general commitments with concrete controls. A
 
 These are real safeguards for data protection, governance, and secure operation. They do not change the fact that AI features and AI agents are executed within platform services provided by Microsoft.
 
+## Models and Infrastructure: European Options in the Microsoft Stack
+
+A similar tension appears in models and compute capacity. Europe has its own providers and open-weight models. Open weight means that the trained model weights—roughly speaking, the parameters learned during training—are available. This does not automatically make the training data, training code, or usage rights open. Europe still does not have a comparable integrated stack combining a frontier model, hyperscale compute, a global cloud, a developer ecosystem, and enterprise sales. The EU is investing in its own capacity through [AI Factories and planned Gigafactories](https://commission.europa.eu/topics/competitiveness/ai-continent_en). At the same time, Microsoft is [expanding its German data centers](https://news.microsoft.com/source/emea/2026/03/spatenstich-fuer-rechenzentrums-cluster-in-nordrhein-westfalen-microsoft-staerkt-die-digitale-infrastruktur-fuer-deutschlands-ki-zukunft/?lang=de). Both improve European infrastructure, but neither automatically changes who controls the platform, its central management services, and the product strategy.
+
+### Microsoft and Mistral: More Choice, but Not a Fully European Stack
+
+I find the significantly expanded [partnership between Microsoft and the French AI provider Mistral](https://www.prnewswire.com/in/news-releases/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control-302830228.html), announced in July 2026, particularly interesting. Microsoft plans to use several billion dollars' worth of the GPU infrastructure Mistral is building in Europe. At the same time, Mistral Medium 3.5 and OCR 4 are being offered through Microsoft Foundry, while [Medium 3.5 is also available as a model choice in Copilot Studio](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/mistral-joins-copilot-studios-growing-lineup-of-model-providers/). Selected open-weight Mistral models are also intended to run through Azure Local in customer-controlled and even fully disconnected environments.
+
+This is more than just another model in the Azure catalog. It adds a European option at the model layer, additional European capacity at the infrastructure layer, and—at least for certain models—a genuine local or isolated operating option. In my view, that matters particularly for regulated organizations.
+
+For Business Central, the most immediate benefit is initially outside the native AI agents. A Copilot Studio agent can connect to Business Central Online through the connector or the Business Central MCP Server and use Mistral Medium 3.5 as its model, currently still as an experimental option. For custom integrations, including On-Premises scenarios, I find [OCR 4](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/mistral-document-ai-with-ocr-4-and-mistral-medium-3-5-arrive-in-microsoft-foundr/4529863) perhaps even more interesting: a controlled service could analyze invoices or other business documents and return the structured results to Business Central.
+
+This still does not create complete European independence. Microsoft Foundry, Copilot Studio, and Azure Local remain Microsoft platforms, while the European compute infrastructure relies in part on Nvidia hardware. At the same time, Microsoft becomes an important distribution partner and major customer of a European model provider.
+
+I would therefore neither celebrate the partnership as a complete European AI stack nor dismiss it as mere sovereignty marketing. It creates real additional choices within an ecosystem that remains closely intertwined across Europe and the United States. To me, that reinforces the core argument of this article: what matters is not only where a provider comes from, but which parts of a service remain interchangeable, self-hostable, and controllable over the long term.
+
 ## Development and DevOps: Openness Under Consolidation Pressure
 
-The development layer is designed openly, especially compared with the C/AL and C/SIDE era. Visual Studio Code, [AL-Go for GitHub](https://github.com/microsoft/AL-Go), and now large parts of the base and system applications developed in AL in the [BCApps repository](https://github.com/microsoft/BCApps) are open source or publicly viewable. The underlying Business Central platform, however, remains proprietary.
+Large parts of the development layer are open, especially compared with the C/AL and C/SIDE era: Visual Studio Code is based on the open-source Code - OSS project, [AL-Go for GitHub](https://github.com/microsoft/AL-Go) is open source, and large parts of the base and system applications developed in AL are publicly viewable in the [BCApps repository](https://github.com/microsoft/BCApps). The underlying Business Central platform, however, remains proprietary.
 
 This mixed picture continues with coding agents. Since spring 2026, Microsoft has documented a standalone [AL MCP Server](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/al-agent-tools/al-mcp-server). It runs as a separate process and exposes AL tools such as build, compile, publish, symbol search, and diagnostics to any MCP-compatible coding agent. It is explicitly not limited to a Microsoft coding agent and can run locally or in a custom automation environment.
 
 At the same time, the market is consolidating quickly. Continue.dev was a model-flexible coding assistant that I personally enjoyed using. The project has since been [acquired by Cursor](https://www.continue.dev/). Shortly afterward, the [agreed but not yet completed acquisition of Anysphere, the company behind Cursor, by SpaceX](https://www.sec.gov/Archives/edgar/data/1181412/000162828026043411/spaceexplorationtechnologi.htm) became public. The timing does not prove a causal connection. But it shows how quickly ownership and operator structures can change, even for tools initially perceived as open alternatives.
-
-The same applies to models and compute capacity. Europe has its own providers and open-weight models, but it does not yet have a comparable integrated stack combining a frontier model, hyperscale compute, a global cloud, a developer ecosystem, and enterprise sales. The EU is investing in its own capacity through [AI Factories and planned Gigafactories](https://commission.europa.eu/topics/competitiveness/ai-continent_en). At the same time, Microsoft is [expanding its German data centers](https://news.microsoft.com/source/emea/2026/03/spatenstich-fuer-rechenzentrums-cluster-in-nordrhein-westfalen-microsoft-staerkt-die-digitale-infrastruktur-fuer-deutschlands-ki-zukunft/?lang=de). Both improve European infrastructure, but neither automatically changes who controls the platform, its central management services, and the product strategy.
 
 It is therefore all the more noteworthy that GitHub itself is reopening some room for choice in specific areas. [Copilot CLI supports custom model providers and an offline mode](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models), including OpenAI-compatible endpoints and locally operated models through Ollama, vLLM, or Foundry Local. Contact with GitHub servers can be prevented, provided that the model provider also runs inside the isolated environment.
 
@@ -98,11 +112,11 @@ The tension is most visible with AI agents.
 
 Microsoft integrates native AI agents deeply into Business Central Online. These AI agents handle multi-step business processes and are controlled through permissions, tasks, profiles, visible pages, and user interactions. With the [Agent SDK for AL](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/ai/ai-agent-sdk-overview), partners can define their own AI agents programmatically.
 
-The underlying model connection and orchestration are not freely interchangeable, however. Business Central can choose between the models available in the Microsoft environment. But an arbitrary local or European model endpoint cannot be configured as the model provider for the native AI agents. A significant part of the agent module is visible in AL, but central functions are executed in proprietary platform services.
+The underlying model connection and orchestration are not freely interchangeable, however. Business Central can choose between the models available in the Microsoft environment. Microsoft currently documents no way to configure an arbitrary local or European model endpoint as the model provider for the native AI agents. The expanded Microsoft-Mistral partnership does not change that for now: Medium 3.5 is available in Microsoft Foundry and Copilot Studio, but not as a freely configurable model provider for native Business Central AI agents. A significant part of the agent module is visible in AL, but central functions are presumably executed in proprietary platform services.
 
-Anyone who wants to use the native, deeply integrated AI-agent functionality is therefore tied to Business Central Online. Custom AI integrations remain possible on-premises. They are, however, custom and investment-intensive software solutions rather than the same product feature.
+Anyone who therefore wants to use the native, deeply integrated AI-agent functionality is tied to Business Central Online. Custom AI integrations remain possible on-premises. They are, however, custom and investment-intensive software solutions rather than the same product feature.
 
-Several offerings must first be distinguished clearly:
+It is also important to distinguish between several offerings:
 
 - The **AL MCP Server** is a locally executable development tool for coding agents.
 - The **Business Central MCP Server** exposes business data and Business Central APIs as tools and is officially documented only for [Business Central Online](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/ai/configure-mcp-server).
@@ -137,15 +151,13 @@ I think it is important to look at dependencies soberly. If you understand their
 
 For important processes, a degradation strategy is often more useful than a blanket ban on cloud services:
 
-- Which processes continue to work if Power Automate is unavailable?
-- Which operational reports remain available without Power BI?
 - Can critical hotfixes be built if GitHub is temporarily unavailable?
 - Which manual processes remain if AI features are disabled?
 - Which operational information is visible without Application Insights?
 
 The sovereignty question therefore shifts from the ERP core to the entire process chain.
 
-## Conclusion: Freedom of Choice Instead of Promises of Independence
+## Conclusion
 
 Business Central is neither a completely sovereign nor a completely non-sovereign product. It is a controllable ERP core with an increasingly cloud-bound innovation layer.
 
@@ -177,6 +189,9 @@ The most important primary sources and technical documentation supporting this a
 
 - [Microsoft Learn: Copilot data security and privacy in Dynamics 365](https://learn.microsoft.com/en-us/dynamics365/faqs-copilot-data-security-privacy)
 - [Microsoft Learn: Data privacy for Azure Direct Models in Microsoft Foundry](https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/openai/data-privacy)
+- [Microsoft and Mistral: Expanded partnership for European AI infrastructure and flexible deployment](https://www.prnewswire.com/in/news-releases/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control-302830228.html)
+- [Microsoft Copilot Blog: Mistral Medium 3.5 in Copilot Studio](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/mistral-joins-copilot-studios-growing-lineup-of-model-providers/)
+- [Microsoft Foundry: Mistral Document AI with OCR 4 and Mistral Medium 3.5](https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/mistral-document-ai-with-ocr-4-and-mistral-medium-3-5-arrive-in-microsoft-foundr/4529863)
 - [Microsoft Learn: Configure Copilot and agent capabilities in Business Central](https://learn.microsoft.com/en-us/dynamics365/business-central/enable-ai)
 - [Microsoft Learn: Payables Agent permissions and roles](https://learn.microsoft.com/en-us/dynamics365/business-central/payables-agent)
 - [Microsoft Learn: Supervise agent activities in Business Central](https://learn.microsoft.com/en-us/dynamics365/business-central/supervise-agent-tasks)
