@@ -47,7 +47,7 @@ I like separating BC Production, BC Nonproduction and AL-Go telemetry logically.
 
 Here's something I particularly like about the AL-Go approach.
 
-In [this GitHub discussion](https://github.com/microsoft/AL-Go/issues/1505), a Microsoft AL-Go maintainer recommends putting **per-tenant extension repositories in a customer-owned GitHub organization**, with the partner collaborating.
+In [this GitHub discussion](https://github.com/microsoft/AL-Go/issues/1505), Freddy recommends putting **per-tenant extension repositories in a customer-owned GitHub organization**, with the partner collaborating.
 
 That seems right to me. The customer owns the source and deployment credentials, while we can still use the same development process.
 
